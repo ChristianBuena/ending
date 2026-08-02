@@ -1,8 +1,15 @@
 using System;
+
 using UnityEngine;
 
 public class BulletCollision : MonoBehaviour
 {
+    private CoinsSpawner coinsSpawner;
+
+    void Start()
+    {
+        coinsSpawner = GameObject.FindWithTag("CoinsSpawner").GetComponent<CoinsSpawner>();
+    }
     public void OnCollisionEnter2D(Collision2D collision)
     {
         String targetTag = collision.gameObject.tag;
@@ -18,6 +25,7 @@ public class BulletCollision : MonoBehaviour
 
                     if (zombie.Health.IsEmpty)
                     {
+                        coinsSpawner.SaveLastPosition(transform.position);
                         zombie.Die();
                     }
                 }     

@@ -7,10 +7,6 @@ public class ZombieSpawner : MonoBehaviour
     [SerializeField] private float timer = 0f;
     [SerializeField] private float spawnInterval = 5f;
     // Start is called once before the first execution of Update after the MonoBehaviour is created
-    void Start()
-    {
-        SpawnZombie();
-    }
 
     // Update is called once per frame
     void FixedUpdate()

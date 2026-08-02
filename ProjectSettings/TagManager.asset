@@ -6,6 +6,9 @@ TagManager:
   tags:
   - Enemy
   - Plants
+  - Canvas
+  - Coins
+  - CoinsSpawner
   layers:
   - Default
   - TransparentFX

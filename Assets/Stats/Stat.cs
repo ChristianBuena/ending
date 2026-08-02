@@ -32,6 +32,10 @@ public class Stat
         Clamp();
     }
 
+    public void CoinIncrease(float amount)
+    {
+        currentValue += amount;
+    }
     private void Clamp()
     {
         currentValue = Mathf.Clamp(currentValue, minValue, maxValue);
