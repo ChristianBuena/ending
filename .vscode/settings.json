@@ -67,5 +67,13 @@
         "*.sln": "*.csproj",
         "*.slnx": "*.csproj"
     },
-    "dotnet.defaultSolution": "ending.slnx"
+    "dotnet.defaultSolution": "ending.slnx",
+    "cSpell.words": [
+        "Behaviour",
+        "Hatswitch",
+        "knockback",
+        "Mathf",
+        "Rigidbody",
+        "WASD"
+    ]
 }
