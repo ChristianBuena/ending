@@ -7,20 +7,18 @@ public class CoinsSpawner : MonoBehaviour
     private Vector2 lastKnownPosition;
     
 
-    public void SpawnCoins()
+    public void SpawnCoins(Vector2 CurrentPos)
     {
         Instantiate(
             coinsPrefab,
-            lastKnownPosition,
+            CurrentPos,
             Quaternion.identity
         );
     }
 
-    public void SaveLastPosition(Vector2 finalPos)
+    public void SaveLastPositionSpawn(Vector2 finalPos)
     {
        lastKnownPosition = finalPos;
-       Debug.Log($"Saved last position: {lastKnownPosition}");
-
-       SpawnCoins();
+        SpawnCoins(lastKnownPosition);
     }
 }

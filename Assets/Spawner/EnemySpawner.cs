@@ -1,26 +1,23 @@
 
 using UnityEngine;
 
-public class ZombieSpawner : MonoBehaviour
+public class EnemySpawner : MonoBehaviour
 {
     public GameObject zombiePrefab;
     [SerializeField] private float timer = 0f;
     [SerializeField] private float spawnInterval = 5f;
     // Start is called once before the first execution of Update after the MonoBehaviour is created
-
     // Update is called once per frame
     void FixedUpdate()
     {
         timer += Time.deltaTime;
-
         if(timer >= spawnInterval)
         {
-            SpawnZombie();
+            SpawnEnemy();
             timer = 0f;
         }
     }
-
-    private void SpawnZombie()
+    private void SpawnEnemy()
     {
         float RandomX = Random.Range(-10f,10f);
         float RandomY = Random.Range(-5f,5f);

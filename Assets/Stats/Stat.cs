@@ -19,22 +19,15 @@ public class Stat
         currentValue += amount;
         Clamp();
     }
-
     public void Decrease(float amount)
     {
         currentValue -= amount;
         Clamp();
     }
-    
     public void SetValue(float amount)
     {
         currentValue = amount;
         Clamp();
-    }
-
-    public void CoinIncrease(float amount)
-    {
-        currentValue += amount;
     }
     private void Clamp()
     {

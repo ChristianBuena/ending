@@ -5,11 +5,11 @@ using TMPro;
 public class CoinsCounter : MonoBehaviour
 {
     [SerializeField] private TextMeshProUGUI coinText;
-    [SerializeField] private CoinStat coinStat;
+    [SerializeField] private ResourceStats coinStat;
 
     void Start()
     {
-        coinStat = GameObject.FindWithTag("Coins").GetComponent<CoinStat>();
+        coinStat = GameObject.FindWithTag("Coins").GetComponent<ResourceStats>();
     }
     public void UpdateCoinsText()
     {

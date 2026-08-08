@@ -4,10 +4,12 @@ using UnityEngine;
 public class PlayerCollision : MonoBehaviour
 {
     private CoinsDrop coinSpawn;
+    private CoinsCounter coinsCounter;
 
     void Start()
     {
         coinSpawn = GameObject.FindWithTag("Coins").GetComponent<CoinsDrop>();
+        coinsCounter = GameObject.FindWithTag("Canvas").GetComponent<CoinsCounter>();
     }
     private void OnTriggerEnter2D(Collider2D collision)
     {
@@ -17,7 +19,7 @@ public class PlayerCollision : MonoBehaviour
         {
             case "Coins":
                 coinSpawn.CollectCoins(1, collision.gameObject);
-                Debug.Log($"Collect Coins: {coinSpawn.Coins.CurrentAmount}");
+                coinsCounter.UpdateCoinsText();
 
             break;
 

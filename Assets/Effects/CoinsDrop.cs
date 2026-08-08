@@ -4,16 +4,15 @@ using UnityEngine.PlayerLoop;
 
 public class CoinsDrop : MonoBehaviour
 {
-    [NonSerialized] public CoinStat Coins;
-    
+    [NonSerialized] public ResourceStats Coins;
 
     void Start()
     {
-      Coins = gameObject.GetComponent<CoinStat>();
+      Coins = gameObject.GetComponent<ResourceStats>();
     }
     public void CollectCoins(int count, GameObject targetCoin)
     {
-        Coins.CoinIncrease(count);
+        Coins.ResourceIncrease(count);
         
         if (targetCoin != null)
         {
