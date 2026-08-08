@@ -9,11 +9,17 @@ public class BulletCounter : MonoBehaviour
 
     void Start()
     {
-        bulletStat = GameObject.FindWithTag("Bullet").GetComponent<ResourceStats>();
+        bulletStat = GameObject.FindWithTag("Weapon").GetComponent<ResourceStats>();
+        bulletText.text = $"Ammo: {bulletStat.CurrentAmount}"; 
     }
     public void UpdateBulletText()
     {
        bulletText.text = $"Ammo: {bulletStat.CurrentAmount}"; 
+    }
+
+    public void ReloadingBulletText()
+    {
+        bulletText.text = "Ammo: Reloading"; 
     }
 
 }

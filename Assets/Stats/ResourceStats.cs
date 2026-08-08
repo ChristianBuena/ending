@@ -13,22 +13,22 @@ public class ResourceStats : MonoBehaviour
     {
         currentAmount = amount;
 
-        Max();
+        ClampMin();
     }
 
     public void ResourceIncrease(int amount)
     {
         currentAmount += amount;
-        Max();
+        ClampMin();
     }
 
     public void ResourceDecrease(int amount)
     {
         currentAmount -= amount;
-        Max();
+        ClampMin();
     }
 
-    private void Max()
+    private void ClampMin()
     {
         currentAmount = Mathf.Max(currentAmount, minAmount);
     }
