@@ -184,7 +184,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: '::'
   chaseSpeed: 5
-  target: {fileID: 7688423638328733713}
 --- !u!114 &852369852494052341
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -197,8 +196,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 062978889147a40d7b340a9c4a9bbb6a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: '::'
-  timeInterval: 2
-  damage: 10
+  timeInterval: 1
+  damage: 50
 --- !u!114 &906657434543198226
 MonoBehaviour:
   m_ObjectHideFlags: 0

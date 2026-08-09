@@ -9,6 +9,7 @@ public class CameraFollow : MonoBehaviour
 
     private void LateUpdate() // happened after rendering of frame
     {
+        if (target == null) return;
         Vector3 targetPosition = target.position + offset; //target position is the addition of the player and the distance
         targetPosition.z = transform.position.z;  //to prevent camera to zoom in to player
 

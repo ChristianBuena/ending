@@ -35,7 +35,6 @@ public class BulletCollision : MonoBehaviour
 
                     if (zombie.Health.IsEmpty)
                     {
-                        zombie.Die();
                         coinsSpawner.SaveLastPositionSpawn(zombie.transform.position);
                     }
                 }     

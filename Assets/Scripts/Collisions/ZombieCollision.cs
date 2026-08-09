@@ -4,9 +4,15 @@ using UnityEngine;
 
 public class ZombieCollision : MonoBehaviour
 {
-    [SerializeField] private float timeInterval = 2f;
-    [SerializeField] private float damage = 20f;
+    [SerializeField] private float timeInterval;
+    [SerializeField] private float damage;
     private Coroutine damageCoroutine;
+    private HealthCounter healthCounter;
+
+    void Start()
+    {
+        healthCounter = GameObject.FindWithTag("Canvas").GetComponent<HealthCounter>();
+    }
 
     public void OnCollisionEnter2D(Collision2D collision)
     {
@@ -20,12 +26,6 @@ public class ZombieCollision : MonoBehaviour
                 if(player != null)
                 {
                     damageCoroutine = StartCoroutine(DamageOverTime(player));
-
-                    if (player.Health.IsEmpty)
-                    {
-                        player.Die();
-                        Debug.Log("Zombie Killed You");
-                    }
                 }
             break;
         }
@@ -51,7 +51,8 @@ public class ZombieCollision : MonoBehaviour
         while (true)
         {
             player.TakeDamage(damage);
-            Debug.Log($"Zombie -10: Player health: {player.Health.CurrentValue}"); 
+            healthCounter.UpdateHealthText();
+            Debug.Log($"Zombie -{damage}: Player health: {player.Health.CurrentValue}"); 
             yield return new WaitForSeconds(timeInterval);
         }
     }

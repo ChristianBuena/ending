@@ -7,18 +7,12 @@ public class EntityStats : MonoBehaviour
     public Stat Stamina;
     public Stat Strength;
 
-    private HealthCounter healthCounter;
-
-    void Start()
-    {
-        healthCounter = GameObject.FindWithTag("Canvas").GetComponent<HealthCounter>();
-    }
+    [SerializeField] private GameOverManager gameOverManager;
 
     #region 
     public void TakeDamage(float damage)
     {
         Health.Decrease(damage);
-        healthCounter.UpdateHealthText();
 
         if (Health.IsEmpty)
         {
@@ -33,7 +27,15 @@ public class EntityStats : MonoBehaviour
 
     public void Die()
     {
+        
+        if (gameObject.CompareTag("Player"))
+        {
+            gameOverManager.GameOver();
+            gameObject.SetActive(false);
+        }
+
         Destroy(gameObject);
+        
     }
     #endregion
 
