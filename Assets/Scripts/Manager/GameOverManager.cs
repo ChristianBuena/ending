@@ -25,9 +25,12 @@ public class GameOverManager: MonoBehaviour
 
     public void Exit()
     {
-        Time.timeScale = 1f;
+        Time.timeScale = 0f;
 
-        //SceneManager.LoadScene("MainMenu");
+        SceneManager.LoadScene("MainMenu", LoadSceneMode.Single);
     }
 
 }
+
+
+

@@ -387,7 +387,7 @@ Canvas:
   m_Enabled: 1
   serializedVersion: 3
   m_RenderMode: 0
-  m_Camera: {fileID: 0}
+  m_Camera: {fileID: 519420031}
   m_PlaneDistance: 100
   m_PixelPerfect: 0
   m_ReceivesEvents: 1
@@ -465,7 +465,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::BulletCounter
   bulletText: {fileID: 1228274945}
-  bulletStat: {fileID: 985457273}
+  bulletStat: {fileID: 985457274}
 --- !u!1 &55652838
 GameObject:
   m_ObjectHideFlags: 0
@@ -497,7 +497,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: '::'
   zombiePrefab: {fileID: 6716378014931437290, guid: a8f1dacbbdeb24fb7bdd6a42efc46d6d, type: 3}
   timer: 0
-  spawnInterval: 5
+  spawnInterval: 1
 --- !u!4 &55652840
 Transform:
   m_ObjectHideFlags: 0
@@ -528,7 +528,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &291430453
 RectTransform:
   m_ObjectHideFlags: 0
@@ -633,7 +633,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 294715762}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1886981281}
+        m_TargetAssemblyTypeName: GameOverManager, Assembly-CSharp
+        m_MethodName: Exit
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &294715762
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1271,10 +1283,9 @@ GameObject:
   m_Component:
   - component: {fileID: 985457269}
   - component: {fileID: 985457271}
-  - component: {fileID: 985457270}
-  - component: {fileID: 985457272}
   - component: {fileID: 985457273}
   - component: {fileID: 985457274}
+  - component: {fileID: 985457275}
   m_Layer: 0
   m_Name: Gun
   m_TagString: Weapon
@@ -1297,18 +1308,6 @@ Transform:
   m_Children: []
   m_Father: {fileID: 2130850209}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: -90.283}
---- !u!114 &985457270
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 985457268}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 5874a777766624bc595e00a1dbe4ec9a, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::Gun
 --- !u!212 &985457271
 SpriteRenderer:
   serializedVersion: 3
@@ -1369,7 +1368,7 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_SpriteSortPoint: 0
   m_BlendShapeWeights: []
---- !u!114 &985457272
+--- !u!114 &985457273
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -1378,14 +1377,14 @@ MonoBehaviour:
   m_GameObject: {fileID: 985457268}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: eaea11b3c9527427a9db0e1181568931, type: 3}
+  m_Script: {fileID: 11500000, guid: 8cdb820e05f2e43dfa6b58c8c77dfeb8, type: 3}
   m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::Shoot
+  m_EditorClassIdentifier: Assembly-CSharp::Gun
   bulletPrefab: {fileID: 8981903096706177287, guid: dd39458ab624f41c39427b111964bda1, type: 3}
   firePoint: {fileID: 985457269}
   fireRate: 0.2
-  fireForce: 10
---- !u!114 &985457273
+  fireForce: 30
+--- !u!114 &985457274
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -1398,8 +1397,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::ResourceStats
   minAmount: 0
-  currentAmount: 50
---- !u!114 &985457274
+  currentAmount: 100
+--- !u!114 &985457275
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -1408,7 +1407,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 985457268}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ae7a8db615be94faea362bc15b99bec2, type: 3}
+  m_Script: {fileID: 11500000, guid: 67115030052944d0bb6b3c610a63d9f1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Reload
 --- !u!1 &1228274943
@@ -1906,7 +1905,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1827521138}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1886981281}
+        m_TargetAssemblyTypeName: GameOverManager, Assembly-CSharp
+        m_MethodName: Restart
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &1827521138
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1945,6 +1956,51 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1827521135}
   m_CullTransparentMesh: 1
+--- !u!1 &1886981280
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1886981282}
+  - component: {fileID: 1886981281}
+  m_Layer: 0
+  m_Name: GameOverManager
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &1886981281
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1886981280}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 61a4be4cd4722428682639fa2bc28061, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::GameOverManager
+  gameOverCanvas: {fileID: 291430452}
+--- !u!4 &1886981282
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1886981280}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 16.16322, y: -12.37008, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1986715638
 GameObject:
   m_ObjectHideFlags: 0
@@ -2240,7 +2296,7 @@ Rigidbody2D:
   m_UseAutoMass: 0
   m_Mass: 1
   m_LinearDamping: 0
-  m_AngularDamping: 0.05
+  m_AngularDamping: 1
   m_GravityScale: 0
   m_Material: {fileID: 0}
   m_IncludeLayers:
@@ -2262,10 +2318,9 @@ MonoBehaviour:
   m_GameObject: {fileID: 2130850207}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 3a445ea0a57a4402186a2a7b93f05267, type: 3}
+  m_Script: {fileID: 11500000, guid: bbb88921710404c75b928ce13fdac580, type: 3}
   m_Name: 
   m_EditorClassIdentifier: '::'
-  movementSpeed: 5
 --- !u!114 &2130850212
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2309,7 +2364,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 2130850207}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 7b4a6a94b11c04768a8e615902abcb7f, type: 3}
+  m_Script: {fileID: 11500000, guid: f74c62e2264f6415f96f9b5b242113ff, type: 3}
   m_Name: 
   m_EditorClassIdentifier: '::'
 --- !u!58 &2130850214
@@ -2376,6 +2431,7 @@ MonoBehaviour:
     minValue: 0
     maxValue: 100
     currentValue: 100
+  gameOverManager: {fileID: 1886981281}
 --- !u!114 &2130850216
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2385,9 +2441,10 @@ MonoBehaviour:
   m_GameObject: {fileID: 2130850207}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 3bcebc38e061a4146bdc34b8b590b77c, type: 3}
+  m_Script: {fileID: 11500000, guid: 68630ace42d14423b8e591bbaef30b13, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Aim
+  movementSpeed: 5
 --- !u!1001 &955691470639606563
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -2468,3 +2525,4 @@ SceneRoots:
   - {fileID: 537861844}
   - {fileID: 704475371}
   - {fileID: 30207346}
+  - {fileID: 1886981282}

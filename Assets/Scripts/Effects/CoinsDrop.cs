@@ -13,7 +13,6 @@ public class CoinsDrop : MonoBehaviour
     public void CollectCoins(int count, GameObject targetCoin)
     {
         Coins.ResourceIncrease(count);
-        
         if (targetCoin != null)
         {
             Destroy(targetCoin);
